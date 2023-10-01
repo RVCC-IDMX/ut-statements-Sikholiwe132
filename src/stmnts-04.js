@@ -12,7 +12,13 @@
  * @returns {number} - temperature in Celsius
  */
 function fahrenheitToCelsius(fahrenheit) {
-  // write your code here & return
+  // Calculate the temperature in Celsius
+  const celsius = (fahrenheit - 32) * (5 / 9);
+
+  // Round the result to 2 decimal places
+  const roundedCelsius = parseFloat(celsius.toFixed(2));
+
+  return roundedCelsius;
 }
 
 /**
@@ -21,7 +27,13 @@ function fahrenheitToCelsius(fahrenheit) {
  * @returns {number} - temperature in Fahrenheit
  */
 function celsiusToFahrenheit(celsius) {
-  // write your code here & return
+  // Calculate the temperature in Fahrenheit
+  const fahrenheit = (celsius * 9 / 5) + 32;
+
+  // Round the result to 2 decimal places
+  const roundedFahrenheit = parseFloat(fahrenheit.toFixed(2));
+
+  return roundedFahrenheit;
 }
 
 module.exports = {

@@ -12,7 +12,7 @@
  * @returns {boolean} true if str is a string
  */
 function isString(str) {
-  // write your code here & return
+  return typeof str === 'string';
 }
 
 /**
@@ -21,7 +21,7 @@ function isString(str) {
  * @returns {boolean}  - true if str is blank (empty)
  */
 function isBlank(str) {
-  // write your code here & return
+  return str.trim() === '';
 }
 
 /**
@@ -33,7 +33,13 @@ function isBlank(str) {
  * @returns {string} - the name of the person
  */
 function sayHelloOrBye(name, num) {
-  // write your code here & return
+  // Check the value of num and choose the prefix accordingly
+  const prefix = num === 0 ? 'Hello ' : 'Bye ';
+
+  // Concatenate the prefix and the name
+  const greeting = prefix + name;
+
+  return greeting;
 }
 
 /**
@@ -44,7 +50,7 @@ function sayHelloOrBye(name, num) {
 
  */
 function compareStrings(str1, str2) {
-  // write your code here & return
+  return str1 === str2;
 }
 
 module.exports = {

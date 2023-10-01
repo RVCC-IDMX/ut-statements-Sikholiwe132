@@ -13,7 +13,8 @@
 
  */
 function logicalAnd(a, b) {
-  // write your code here & return
+  // Use the logical AND operator && to check if both a and b are truthy
+  return a && b;
 }
 
 /**
@@ -23,7 +24,7 @@ function logicalAnd(a, b) {
  * @returns {boolean} - true if a or b is truthy, false if both are falsy
  */
 function logicalOr(a, b) {
-  // write your code here & return
+  return a || b;
 }
 
 /**
@@ -32,7 +33,7 @@ function logicalOr(a, b) {
  * @returns {boolean} - the opposite of the given boolean
  */
 function invertBoolean(bool) {
-  // write your code here & return
+  return !bool;
 }
 
 /**
@@ -49,8 +50,24 @@ function invertBoolean(bool) {
 
  */
 function numberOfOdds(num) {
-  // write your code here & return
+  // Initialize a variable to keep track of the count of odd numbers
+  let count = 0;
+
+  // Use a for loop to iterate from 0 to num - 1
+  for (let i = 0; i < num; i++) {
+    // Check if the current number (i) is odd by checking if it's not divisible by 2
+    if (i % 2 !== 0) {
+      count++; // Increment the count if the number is odd
+    }
+  }
+
+  // Return the final count of odd numbers
+  return count;
 }
+
+// Example usage:
+const number = 9;
+const results = numberOfOdds(number);
 
 /**
  * Calculates the sum of all the numbers from 0 to num (inclusive)
@@ -62,8 +79,21 @@ function numberOfOdds(num) {
  * ? For example, num is 4 then return 10 because 1 + 2 + 3 + 4 = 10.
  */
 function addUpTheNumbers(num) {
-  // write your code here & return
+  // Initialize a variable to store the sum
+  let sum = 0;
+
+  // Use a for loop to iterate from 0 to num
+  for (let i = 0; i <= num; i++) {
+    sum += i; // Add the current number (i) to the sum
+  }
+
+  // Return the final sum
+  return sum;
 }
+
+// Example usage:
+const num = 4;
+const outcome = addUpTheNumbers(num);
 
 /**
  * Calculates the letter grade for a given score
@@ -81,8 +111,24 @@ function addUpTheNumbers(num) {
  * ?
  */
 function gradeGenerator(score) {
-  // write your code here & return
+  if (score < 0 || score > 100) {
+    // Handle out-of-range scores (less than 0 or greater than 100)
+    return 'Invalid Score';
+  } if (score < 60) {
+    return 'F';
+  } if (score < 70) {
+    return 'D';
+  } if (score < 80) {
+    return 'C';
+  } if (score < 90) {
+    return 'B';
+  }
+  return 'A';
 }
+
+// Example usage:
+const score = 75;
+const result = gradeGenerator(score);
 
 /**
  * Calculates a string of the student's name and grade
@@ -100,9 +146,22 @@ function gradeGenerator(score) {
  * ? note: you have to use English grammar's correct indefinite article
  * ? it's 'an A' (not a A) and 'an F' (not a F)
  */
-function getGrade(name, score) {
-  // write your code here & return
+function getGrade(name, studentScore) {
+  // Call the gradeGenerator function to get the letter grade
+  const letterGrade = gradeGenerator(studentScore);
+
+  // Determine the correct indefinite article based on the letter grade
+  const indefiniteArticle = letterGrade === 'A' || letterGrade === 'F' ? 'an' : 'a';
+
+  // Construct and return the output string
+  const gradeResult = `${name} got ${indefiniteArticle} ${letterGrade}`;
+  return gradeResult;
 }
+
+// Example usage:
+const studentName = 'Francine';
+const studentScore = 95;
+const studentGrade = getGrade(studentName, studentScore);
 
 module.exports = {
   logicalAnd,

@@ -14,7 +14,7 @@
  * @returns {number} - The sum of the two numbers
  */
 function sum(a, b) {
-  // write your code here & return value
+  return a + b;
 }
 
 /**
@@ -24,7 +24,16 @@ function sum(a, b) {
  * @returns {number} - The sum of the two numbers
  */
 function betterSum(x, y) {
-  // write your code here & return value
+  // Convert the input values to numbers, then add them
+  const num1 = parseFloat(x);
+  const num2 = parseFloat(y);
+
+  // Check if either conversion resulted in NaN (Not-a-Number)
+  if (isNaN(num1) || isNaN(num2)) {
+    throw new Error('Invalid input. Both arguments must be numbers or number-like strings.');
+  }
+
+  return num1 + num2;
 }
 
 /**
@@ -37,7 +46,7 @@ function betterSum(x, y) {
  * ? computes the first operand modulo the second operand
  */
 function remainder(number, divisor) {
-  // write your code here & return value
+  return number % divisor;
 }
 module.exports = {
   sum,
